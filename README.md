@@ -11,4 +11,4 @@
 ModernKings corp
 
 # License
-The project is licensed under the [Apache 2 license](https://github.com/ModernKings/MKMovieCenter/blob/master/LICENSE, "Apache 2 license").
+The project is licensed under the [Apache 2 license](https://github.com/ModernKings/MKMovieCenter/blob/master/LICENSE  "Apache 2 license").
