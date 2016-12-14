@@ -8,6 +8,7 @@ import json
 
 class RequestNowPlayingMovieInfo(object):
 	movieListDir = "./nowplaying_id/"
+	movieInfoDir = "./nowplaying_info/"
 	latestMovieListFIleDate = datetime.strptime('20000101_00:00:00', '%Y%m%d_%H:%M:%S')
 	latestMovieListFIle = ""
 	url = 'https://api.douban.com/v2/movie/'
@@ -32,6 +33,11 @@ class RequestNowPlayingMovieInfo(object):
 
 		data = json.load(res)
 		return data
+	def  saveMovieInfo(self, id="0", info="info"):
+		fp = open(self.movieInfoDir+id.strip()+'.info', 'w')
+		fp.write(str(info))
+		fp.close()
+		pass
 
 if __name__ == '__main__':
 	requestNowPlayingMovieInfo = RequestNowPlayingMovieInfo()
@@ -39,4 +45,6 @@ if __name__ == '__main__':
 	print latestMoiveFile
 	fp = open(latestMoiveFile, 'r')
 	for movieId in fp :
-		print requestNowPlayingMovieInfo.requestMovieInfo(movieId)
+		info = requestNowPlayingMovieInfo.requestMovieInfo(movieId)
+		requestNowPlayingMovieInfo.saveMovieInfo(movieId, info)
+	fp.close()
