@@ -6,7 +6,7 @@ from time import gmtime, strftime
 
 nowPlayingUrl = 'https://movie.douban.com/nowplaying/beijing/'
 scheduleTime = 14
-def RequestNowPlayingList(url):
+def RequestNowPlayingRawData(url):
         while True :
                 currentTime = strftime("%Y%m%d_%H:%M:%S", time.localtime(time.time()))
                 print currentTime
@@ -25,4 +25,4 @@ def RequestNowPlayingList(url):
                 fp.close()
 
 if __name__ == "__main__" :
-        RequestNowPlayingList(nowPlayingUrl)
+        RequestNowPlayingRawData(nowPlayingUrl)
