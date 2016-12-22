@@ -33,6 +33,7 @@ class RequestNowPlayingMovieInfo(object):
 
 		data = json.load(res)
 		return data
+	
 	def  saveMovieInfo(self, id="0", info="info"):
 		fp = open(self.movieInfoDir+id.strip()+'.info', 'w')
 		fp.write(str(info))
