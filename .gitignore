@@ -1,1 +1,4 @@
 .DS_Store
+raw_nowplaying_pages/*
+nowplaying_info/*
+nowplaying_id/*

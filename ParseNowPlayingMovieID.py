@@ -5,14 +5,14 @@ import re
 import time
 from time import gmtime, strftime
 
-class GenNowPlayingID(object):
+class ParseNowPlayingID(object):
 	"""docstring for ClassName"""
 	def __init__(self):
 		#super(ClassName, self).__init__()
 		# self.arg = arg
 		pass
 
-	def GenNowPlayingIdList(self):
+	def ParseNowPlayingIdList(self):
 		page = requests.get('https://movie.douban.com/nowplaying/beijing/')
 		content=page.text.encode("utf-8")
 		pattern=re.compile(r'(?<=id=")\d+(?="\n)')
@@ -28,7 +28,7 @@ class GenNowPlayingID(object):
 		fp.close()
 
 if __name__=="__main__":
-	genNowPlayingID = GenNowPlayingID()
-	genNowPlayingID.GenNowPlayingIdList()
+	parseNowPlayingID = ParseNowPlayingID()
+	parseNowPlayingID.ParseNowPlayingIdList()
 
 
